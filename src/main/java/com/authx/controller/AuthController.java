@@ -50,7 +50,7 @@ public class AuthController {
 
     @GetMapping("/email-test")
 public String testEmail() {
-     Syastem.out.println("In the email send message ");
+     System.out.println("In the email send message ");
     profileService.sendResetOtp("rustampoonia@gmail.com");
     System.out.println("Email triggered");
     return "Email triggered";

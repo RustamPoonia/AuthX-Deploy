@@ -97,6 +97,7 @@ public class ProfileServiceImpl implements ProfileService {
       try {
          emailService.sendResetOtpEmail(existingEntity.getEmail(), otp);
       } catch (Exception e) {
+          e.printStackTrace(); 
          throw new UnableToSendEmail("Unable to send email");
       }
     }
@@ -142,6 +143,7 @@ public class ProfileServiceImpl implements ProfileService {
       try {
          emailService.sendVerificationOtpEmail(existingUser.getEmail(), otp);
       } catch (Exception e) {
+          e.printStackTrace(); 
          throw new RuntimeException("Unable to send email");
       }
     }

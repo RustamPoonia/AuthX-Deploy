@@ -43,7 +43,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .requestMatchers("/user/**").hasAnyRole("USER","ADMIN")
-                        .requestMatchers("/login","/register","/send-otp","/verify-email","/send-reset-password","/reset-password","/logout","/swagger-ui.html","/swagger-ui/**","/v3/api-docs/**","/api-docs/**").permitAll()
+                        .requestMatchers("/login","/register","/send-otp","/verify-email","/email-test","/send-reset-password","/reset-password","/logout","/swagger-ui.html","/swagger-ui/**","/v3/api-docs/**","/api-docs/**").permitAll()
                         .anyRequest().authenticated())
                 .logout(AbstractHttpConfigurer::disable)
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(customAuthenticationEntryPoint))

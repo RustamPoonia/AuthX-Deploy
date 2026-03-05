@@ -48,6 +48,14 @@ public class AuthController {
 
     private final ProfileService profileService;
 
+    @GetMapping("/email-test")
+public String testEmail() {
+     Syastem.out.println("In the email send message ");
+    emailService.sendOtp("rustampoonia@gmail.com", "123456");
+    System.out.println("Email triggered");
+    return "Email triggered";
+}
+
     @PostMapping("/login")
     @Operation(summary = "Login user with username and password")
     public ResponseEntity<?> login(@RequestBody AuthRequest request) {
